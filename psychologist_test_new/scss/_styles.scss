@@ -1,0 +1,919 @@
+//Navigation
+//-----------------------------------------------------------------------------
+
+.header {
+
+  nav {
+    z-index: 98;
+  }
+  
+  &__burger {
+
+    &-state {
+      display: none;
+    }
+
+    &-btn {      
+      display: none;    
+      background: transparent;
+      margin: 40px;
+      text-align: center;
+      width: 40px;
+      height: 30px;
+      position: fixed;
+      right: 0;
+      transition: all .2s;
+      z-index: 1111;
+      
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+    }
+
+    &-icon1{
+      position: absolute;
+      border: 3px solid $baseFontColor;
+      border-radius: 3px;
+      left: 0;
+      width: 100%;      
+      transition: all .2s;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-icon2 {
+      position: absolute;
+      border: 3px solid $baseFontColor;
+      border-radius: 3px;
+      left: 0;
+      width: 100%;      
+      transition: all .2s;
+      top: 0;
+    }
+
+    &-icon3 {
+      position: absolute;
+      border: 3px solid $baseFontColor;
+      border-radius: 3px;
+      left: 0;
+      width: 100%;      
+      transition: all .2s;
+      top: 100%;
+      transform: translateY(-100%);
+    }
+
+  }
+
+  &-nav {
+    @include clearfix;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    
+
+    &__link {
+      text-decoration: none;
+      border-bottom: 0;
+      padding-bottom: 0;/* 
+      transition: all .2s; */
+      display: inline-block;   
+      margin: 30px 10px;
+      color: $baseFontColor;
+      text-align: left;
+      
+      &:hover {
+        margin-top: 14px;
+        text-decoration: none;
+        color: $baseFontColor;
+        
+
+        &::before {
+          content: '';
+          display: block;
+          position: relative;
+          top: -24px;    
+          width: 100%;
+          height: 16px;
+          border-radius: 10px;
+          background-color: $elementsColor;
+        }     
+      }
+      
+    }
+  }
+
+  #burger:checked {
+
+    & ~ nav {   
+      
+      font-size: larger;
+      font-weight: bold;       
+      position: fixed; 
+      padding: 60px 20px 20px 20px;
+      height: 100%;
+      width: 100%;
+      transition: 0.3s, all 0.3s;
+      background-color: rgba(#bebebe, 0.787);
+  
+      .header-nav {      
+        height: 100%;
+        opacity: 1;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+
+        &__link {
+                    
+          &:hover {
+            margin-top: 22px;
+            border-bottom: 8px solid $elementsColor;
+            border-radius: 8px;
+            transition: all .2s;
+    
+            &::before {
+              width: 0;
+              height: 0;
+              top: 0;
+            }     
+          }
+          
+        }
+
+      }
+    }
+  
+    & ~ .header__burger-btn {
+      .header__burger-icon1 {
+        opacity: 0;
+      }
+  
+      .header__burger-icon2 {
+        top: 50%;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      .header__burger-icon3 {
+        top: 50%;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+}
+
+
+
+
+//Main content
+//-----------------------------------------------------------------------------
+
+.mainContent > div:nth-child(even) {
+  background-color: $secondaryBGColor;
+}
+.mainContent > div {
+  display: grid;
+  padding: 100px 140px 100px 200px;
+  grid-template-columns: repeat(auto-fix, 1fr);
+}
+
+.title-for-block {
+  font-size: 52px;
+  margin-bottom: 100px;
+}
+
+//Header
+//-----------------------------------------------------------------------------
+
+.article {
+  background-color: $secondaryBGColor;
+  display: grid;
+  grid-template-columns: minmax(550px,1fr) 1fr ;
+  grid-auto-rows: minmax(650px,auto);
+  grid-gap: 20px;
+  z-index: 0;
+
+  &__info {
+    align-self: center;
+
+    &-title{
+      font-size: 64px;
+      font-weight: bold;
+      line-height: 75px;
+  
+    }
+  
+    &-subtitle{
+      font-size: 28px;
+      line-height: 100px;
+      color: $subtitleColor;    
+    }
+
+    &-text{
+      font-size: 32px;
+      line-height: 48px;   
+    }
+
+  } 
+
+  &__photo {
+    background: url(../images/Psyhologist-photo.png) no-repeat center top;
+  }
+}
+
+//Principles block
+//-----------------------------------------------------------------------------
+
+.principles {
+  position: relative;
+
+  .firstTree {
+    position: absolute;
+    right: 0;
+    top: -150px;
+    z-index: 1;
+  }
+
+  &__list {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 100px;
+    
+    &-block {
+      z-index: 2;
+
+    }
+
+  }
+
+  &__block {
+
+    &-title {
+      font-size: 32px;
+      margin: 30px 0;
+      font-weight: bold;
+      
+      
+      &::before {
+        content: '';
+        background-color: $elementsColor;
+        position: absolute;
+        transform: translate(-250%,50%);
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+      }
+    }  
+  }
+}
+
+//Carousel
+//-----------------------------------------------------------------------------
+
+.carousel {
+  display: grid;
+    grid-template-columns: 1fr minmax(500px,1fr);
+    grid-gap: 100px;
+
+    &-indicators {
+      display: block;
+      position: static;
+      margin: auto 0;
+      & li {
+        background-color: transparent;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 40px;
+        height: auto;
+        text-indent: 0;
+        cursor: pointer;
+        z-index: 5;
+        
+        &.active {
+
+          &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: -50px;
+            transform: translateY(20%);
+            border-style: solid;
+            border-width: 13px 0 13px 16px;
+            border-color: transparent transparent transparent $elementsColor;
+          }
+          
+        }
+      }
+    }
+
+    &-inner {      
+      align-self: center;
+      justify-self: center;
+      
+    }
+}
+
+
+//Questions block
+//-----------------------------------------------------------------------------
+
+
+.questions {
+  position: relative;
+
+  & .carousel { 
+
+    &-item {  
+      
+      & p {
+        background-color: $elementsColor;
+        border-radius: 20px 20px 0 20px;
+        padding: 40px;
+        margin-bottom: 35px;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          position: absolute;
+          right: 0;
+          bottom: -35px;
+          border-width: 0 60px 35px 0;
+          border-color: transparent $elementsColor transparent transparent;
+        }
+      }
+
+      & span {
+        font-size: 26;
+        font-weight: bold;
+        float: right;
+        margin: 0 50px;
+        line-height: 60px;
+      
+        &::before {
+          content: "";
+          width: 60px;
+          height: 60px;
+          display: block;
+          margin-right: 20px;
+          border-radius: 50%;
+          overflow: hidden;
+          float: left;
+          background: url(../images/psyhologist-icon.png) no-repeat -55px top;
+        }
+      }
+    } 
+  }
+}
+
+.secondTree {
+  position: absolute;
+  left: -500px;
+  top: -165px;
+  z-index: 1;
+}
+
+//About block
+//-----------------------------------------------------------------------------
+
+.about {
+  height: 730px;
+  background: url(../images/about-me.png) no-repeat top;
+  background-position-x: right;
+  position: relative;
+
+  &__block {
+    max-width: 600px;
+    &-title {
+      font-weight: bold;
+      line-height: 100px;
+      font-size: 32px;
+    }
+  }
+
+}
+
+//Educatio block
+//-----------------------------------------------------------------------------
+
+.education {
+  position: relative;
+  .carousel {
+    img {
+      z-index: 15;
+      height: 100%;
+    }
+  }
+}
+
+.thirdTree {
+  position: absolute;
+  left: 0;
+  bottom: -160px;
+  transform: rotate(15deg);
+  z-index: 1;
+}
+
+.fourthTree {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.mainContent > div:last-child {
+  padding: 100px;
+}
+
+//Recording block
+//-----------------------------------------------------------------------------
+
+.recording{ 
+
+  &__block {
+    padding: 50px;
+    padding-left: 100px;
+    border: 10px solid $elementsColor;
+    border-radius: 20px;    
+    display: grid;
+    grid-template-columns: 2fr 400px;
+    align-items: center;
+    grid-gap: 20px;
+
+    &-title {
+      margin-bottom: 50px;
+      font-size: 36px;
+      font-weight: bold;      
+    }
+
+    &-text {
+      font-size: 32px;
+    }
+
+    &-button {
+      padding: 25px;
+      font-size: 32px;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: bold;
+      background-color: $elementsColor;
+      border: none;
+      align-self: flex-end;
+      transition: box-shadow .3s;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 11px rgba(33,33,33,.5);
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        &:active {
+          color: #fff;
+        }
+      }
+    }
+    
+  }
+}
+
+//Footer
+//-----------------------------------------------------------------------------
+
+.footer {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3,1fr) 1.5fr;
+  justify-items: center;
+  align-items: center;
+  margin: 0px 50px;
+  margin-bottom: 150px;
+  grid-gap: 50px;
+  &__block {
+   
+    &-subtitie{
+      font-size: 14px;
+      color: $subtitleColor;
+    }
+    &-text{
+      font-size: 18px;
+      &--name {
+        font-weight: bold;
+        font-size: 22px;
+      }
+      
+    }
+    &:first-child {
+      justify-self: start;
+    }
+    &:last-child {
+      justify-self: end;
+    }
+  }
+
+  &__social {
+    &-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-item {
+      font-family: "Font Awesome 5 Brands";
+      width: 20px;      
+      font-size: 0px;
+      
+      & a {
+        color: $socialColor;
+        text-decoration: none;
+      }
+      &--facebook {
+
+        &::before{
+          content: "\f39e";                  
+          font-size: 20px;
+        }   
+        
+        &:hover,
+        &:active {
+          color: #0c88ef;
+        }
+      }
+
+      &--twitter {
+
+        &::before{
+          content: "\f099";                  
+          font-size: 20px;
+        }     
+        
+        &:hover,
+        &:active {
+          color: #1da1f2;
+        }
+      }
+
+      &--youtube {
+
+        &::before{
+          content: "\f167";                  
+          font-size: 20px;
+        }     
+        
+        &:hover,
+        &:active {
+          color: #ff0000;
+        }
+      }
+
+      &--instagram {
+
+        &::before{
+          content: "\f16d";                  
+          font-size: 20px;
+        }     
+        
+        &:hover,
+        &:active {
+          color: #cc2366; 
+        }
+      }
+
+    }
+  }  
+}
+
+//Adaptive layout
+//-----------------------------------------------------------------------------
+
+
+
+@media all and (max-width:1200px) {
+
+  
+  .header {
+
+    &-nav {
+      height: 0;
+      opacity: 0;   
+      transition: 0.2s, all 0.3s;
+      display: none;
+      
+    }
+
+    &__burger {
+      &-btn {
+        display: block;
+      }
+        
+    }
+  }
+
+  .mainContent > div {
+    padding: 60px 80px 100px 120px;
+  }
+
+  .mainContent > div:last-child {
+    padding: 60px;
+}
+  
+  .title-for-block {
+    font-size: 36px;
+    margin: 40px 0;
+  }
+  
+  .article {
+    grid-gap: 0;
+    
+    &__info {
+      margin: 50px;
+      box-sizing: content-box;
+  
+      &-title{
+        font-size: 36px;
+        line-height: 46px;
+        margin-bottom: 20px;    
+      }
+    
+      &-subtitle{
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 30px;    
+      }
+  
+      &-text{
+        font-size: 20px;
+        line-height: 30px;   
+      }
+  
+    } 
+  }
+
+  .principles {
+    &__list {
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      margin-top: 0;
+      grid-gap: 50px;
+      font-size: 16px;  
+    }
+  
+    &__block {
+  
+      &-title {
+        font-size: 20px;
+        margin: 20px 0;
+        font-weight: bold; 
+        
+        &::before {          
+          height: 15px;
+          width: 15px;
+        }
+      }
+      &-text {
+        line-height: 25px;
+      }
+    }
+  }
+
+  .carousel {
+      grid-template-columns: minmax(400px,1fr);
+      grid-gap: 50px;
+      font-size: 16px;
+  
+      &-indicators {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+        grid-auto-rows: auto;
+        grid-gap: 45px;
+        
+
+        & li {
+          position: relative;
+          margin-bottom: 0;
+
+          &.active {
+  
+            &::before {
+              left: -30px;
+              transform: translateY(20%);
+              border-width: 10px 0 10px 14px;
+            }
+            
+          }
+        }
+      }
+  }
+  .questions {
+    position: relative;
+  
+    & .carousel { 
+  
+      &-item {  
+        
+        & p {
+  
+          &::after {
+            bottom: -28px;
+            border-width: 0 50px 28px 0;
+          }
+        }
+  
+        & span {
+        
+          &::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-position-x: -45px;
+            background-size: 130px;
+          }
+        }
+      } 
+    }
+  }
+
+  .about {
+    font-size: 16px;
+    &__block {
+      max-width: 400px;
+      &-title {
+        font-size: 20px;
+      }
+    }
+  
+  }
+
+  .education { 
+    .carousel { 
+      img {
+        width: 400px;
+      }
+    }
+  }
+
+  .recording{
+
+    &__block {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      padding: 50px;
+
+      &-title {
+        font-size: 22px;   
+      }
+
+      &-text {
+        font-size: 20px;
+      }
+
+      &-button {
+
+        font-size: 22px;
+        
+      }
+      
+    }
+  }
+  .footer {
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-auto-rows: auto;
+    margin: 0px 50px;
+    margin-bottom: 150px;
+    grid-gap: 50px;
+    &__block {
+     
+      &-subtitie{
+        font-size: 13px;
+        color: $subtitleColor;
+      }
+      &-text{
+        font-size: 15px;
+        &--name {
+          font-size: 18px;
+        }
+        
+      }
+      &:first-child {
+        justify-self: center;
+      }
+      &:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+    }
+  
+  }
+}
+
+@media all  and (min-width:751px) and (max-width:1200px) {
+  .article {
+    grid-template-columns: repeat(auto-fit,minmax(390px,1fr));
+    grid-auto-rows: minmax(470px,auto);
+    
+    
+    &__photo {
+      background-size: 390px;
+    }
+  }
+
+  .principles {
+    .firstTree {
+      top: -110px;
+      height: 300px;
+    }
+  }
+  
+  .secondTree {
+    height: 200px;
+    left: -350px;
+    top: -120px;
+  }
+  .thirdTree {
+    height: 300px;
+    bottom: -120px;
+  }
+  .fourthTree {
+    display: 400px;
+  }
+}
+
+
+
+@media all  and (max-width:750px) {
+
+  .header {
+
+    &__burger {
+      &-btn {
+        margin: 30px;
+      }
+        
+    }
+  }
+
+  .article {
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-auto-rows: minmax(460px,auto);
+    
+    &__photo {
+      background-size: 390px;
+    }
+  }
+  .mainContent > div {
+    padding: 100px 40px 100px 50px;
+  }
+  .carousel {
+    grid-template-columns: minmax(260px,1fr);
+    
+    &-indicators {
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      
+    }
+  }
+
+  .about {
+    &__block {
+      max-width: 280px;
+    }
+  }
+
+  .education { 
+    .carousel { 
+      img {
+        width: 280px;
+      }
+    }
+  }
+  .principles {
+    .firstTree {
+      top: -80px;
+      height: 270px;
+    }
+
+  }
+  
+  .secondTree {
+    height: 180px;
+    left: -320px;
+    top: -110px;
+  }
+  .thirdTree {
+    height: 250px;
+    bottom: -100px;
+  }
+  .fourthTree {
+    display: none;
+  }
+}
+
+
+

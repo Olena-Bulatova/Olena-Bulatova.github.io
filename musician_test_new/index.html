@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>    
+    <script src="./bootstrap-sass-3.3.7/assets/javascripts/bootstrap.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myCarousel').carousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 250        
+            });
+            $(".center").slick({
+                slidesToShow: 5,
+                centerMode: true,
+                loop: true,
+                nav: false,
+                dots: false,
+                responsive: [
+                    {
+                    breakpoint: 1050,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                    },
+                    {
+                    breakpoint: 650,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                    }
+                ]
+            });
+        });
+    </script>
+    <title>John Doe</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <header class="header">        
+            <input id="burger" type="checkbox" class="header__burger-state"/>                
+            <label for="burger" class="header__burger-btn">
+                <span class="header__burger-icon1"></span>
+                <span class="header__burger-icon2"></span>
+                <span class="header__burger-icon3"></span>
+            </label>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav__item">
+                                <a href="#about" class="nav__link">About</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#discography" class="nav__link">Discography</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#concert-tours" class="nav__link">Concert tours</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#latter-compositions" class="nav__link">Latter compositions</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#new-tracks" class="nav__link">New tracks</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#upcoming-evens" class="nav__link">Upcoming evens</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#history" class="nav__link">History</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#contact" class="nav__link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <div class="about" id="about">
+            <div class="container">
+                <div class="row">
+                    <img class="logo" src="./images/logo.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="discography" id="discography">
+            <div class="container">
+                <div class="row">
+                    <h2 class="discography__title">
+                        <span class="discography__title-text">Discography</span>
+                    </h2>
+                    <p class="discography__content">September 4 world heard Night Visions, the first full album. He
+                        reached the 2 position in the chart Billboard 200. The single «It's Time» took 22 th place in
+                        the Billboard Hot 100, 4th in the Billboard Alternative and Billboard Rock, and now went
+                        platinum.</p>
+                </div>
+                <div class="row">
+                    <div class="discography-box">
+                        <div class="discography__name">
+                            <p class="discography__name-year">2010</p>
+                            <p class="discography__name-text">hell and silence</p>
+                        </div>
+                        <div class="discography__info">
+                            <h3 class="discography__info-title">Hell and Silence is an EP by Las Vegas rock group</h3>
+                            <p class="discography__info-text">Hell and Silence is an EP by Las Vegas rock group ,
+                                released in March 2010 in the United States. It was recorded at Battle Born Studios.
+                                All songs were written by Imagine Dragons and self-produced. The EP was in part mixed
+                                by Grammy nominated engineer Mark Needham.</p>
+                            <p class="discography__info-text">To promote the album the band performed five shows at
+                                SXSW 2010 including at the BMI Official Showcase.While at SXSW they were endorsed by
+                                Blue Microphones. They also toured the western United States with Nico Vega and Saint
+                                Motel. They also performed at Bite of Las Vegas Festival 2010, New Noise Music
+                                Festival, Neon Reverb Festival, and Fork Fest.</p>
+                            <button class="discography__info-play discography__info-play--first">Play</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="discography__box">
+                        <div class="discography__name">
+                            <p class="discography__name-year">2012</p>
+                            <p class="discography__name-text">Night Visions</p>
+                        </div>
+                        <div class="discography__info">
+                            <h3 class="discography__info-title">Night Visions is the debut studio album by American rock band</h3>
+                            <p class="discography__info-text">It was released on September 4, 2012 through Interscope
+                                Records. The extended track was released on February 12, 2013, adding three more
+                                songs. Recorded between 2010 and 2012, the album was primarily produced by the band
+                                themselves, as well as English hip-hop producer Alex da Kid and Brandon Darner from
+                                the American indie rock group The Envy Corps. It was mastered by Joe LaPorta.
+                                According to frontman Dan Reynolds, the album took three years to finish ...</p>
+                            <button class="discography__info-play discography__info-play--second">Play</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="discography__bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="discography__box">
+                            <div class="discography__name">
+                                <p class="discography__name-year">2015</p>
+                                <p class="discography__name-text">Smoke + Mirrors</p>
+                            </div>
+                            <div class="discography__info">
+                                <h3 class="discography__info-title">The album was recorded during 2014 at the band's
+                                    home studio in Las Vegas, Nevada</h3>
+                                <p class="discography__info-text">Self-produced by members of the band along with
+                                    English hip-hop producer Alexander Grant, known by his moniker Alex da Kid, the
+                                    album was released by Interscope Records and Grant's KIDinaKORNER label on
+                                    February 17, 2015, in the United States.</p>
+                                <button class="discography__info-play discography__info-play--third">Play</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="concert-tours" id="concert-tours">
+            <div class="container">
+                <div class="row">
+                    <h2 class="concert-tours__title">
+                        <span class="concert-tours__title-text">Concert tours</span>
+                    </h2>
+                    <p class="concert-tours__content">Before the release of Night Visions, Imagine Dragons made
+                        appearances on American radio and television to promote their extended play, Continued
+                        Silence and debut single It's Time. The band performed "It's Time" on the July 16, 2012
+                        airing of NBC late-night talk show The Tonight Show with Jay Leno"</p>
+                </div>
+            </div>
+            <div class="concert-tours__bg">
+                <div class="container">
+                    <div class="concert-tours__box">
+                        <div class="row">
+                            <div class="concert-tours__name">
+                                <p class="concert-tours__name-year">03.08.2015</p>
+                                <p class="concert-tours__name-text">Smoke + Mirrors Tour</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="concert-tours__info">
+                                <h3 class="concert-tours__info-title">2015–present</h3>
+                                <p class="concert-tours__info-text">At Lollapalooza in Sao Paulo, Brazil, the last date on the Into the Night Tour, the band announced a rest, and complemented saying, "This is our last show for a while, and had no better place to end this tour".[51] The conclusion of the Into the Night Tour signaled the end of the Night Visions album cycle. Lead singer Dan Reynolds joked about the end of the Night Visions cycle, saying that "We're always writing on the road, [so] that second album will come, unless we die. </p>
+                                <button class="concert-tours__info-play">Buy online</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="latter-compositions" id="latter-compositions">
+            <div class="container">
+                <div class="row">
+                    <h2 class="latter-compositions__title">
+                        <span class="latter-compositions__title-text">latter compositions</span>
+                    </h2>
+                    <p class="latter-compositions__content">It's Time" was released as the lead single from Continued Silence and It's Time, both extended plays preceding Night Visions' release.</p>
+                </div>
+
+                <section>
+                    <div class="latter-compositions__box">
+                        <div class="row">
+
+                            <div class="latter-compositions__item latter-compositions__item--odd">
+                                <div class="row">
+                                    <div class="latter-compositions__name">
+                                        <p class="latter-compositions__name-year">03.04.2015</p>
+                                        <p class="latter-compositions__name-text">indian sammer</p>
+                                    </div>
+                                    <div class="latter-compositions__info">
+                                        <h3 class="latter-compositions__info-title">Sam Feldt ft. Kimberly Anne - Show Me Love (EDX's Indian Summer Remix)</h3>
+                                        <p class="latter-compositions__info-text">"Radioactive" is a song recorded by American rock band Imagine Dragons for their major-label debut EP Continued Silence and later on their debut studio album, Night Visions (2012), as the opening track. "Radioactive" was </p>
+                                        <div class="latter-compositions__info-buttons">
+                                            <button class="latter-compositions__info-play">Visit the iTunes</button>
+                                            <ul class="latter-compositions__info-song">
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--heard">182,364</li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--like">10 k </li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--repost">3 k</li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--comment">96</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <iframe class="latter-compositions__player latter-compositions__player--odd" src="https://www.youtube.com/embed/rCqQGgM0Y5I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="latter-compositions__box">
+                        <div class="row">
+
+                            <div class="latter-compositions__item latter-compositions__item--even">
+                                <div class="row">
+                                    <div class="latter-compositions__name">
+                                        <p class="latter-compositions__name-year">20.07.2015</p>
+                                        <p class="latter-compositions__name-text">indian sammer Remix</p>
+                                    </div>
+                                    <div class="latter-compositions__info">
+                                        <h3 class="latter-compositions__info-title">Sam Feldt - Show Me Love (EDX's Indian Summer Remix)</h3>
+                                        <p class="latter-compositions__info-text">Amsterdam's Sam Feldt earned attention in Europe and then worldwide for his melodic house remixes, mixtapes, and collaborations including 2014's "Bloesem" with De Hofnar and "Hot Skin" with Kav Verhouzer on... </p>
+                                        <div class="latter-compositions__info-buttons">
+                                            <button class="latter-compositions__info-play">Visit the iTunes</button>
+                                            <ul class="latter-compositions__info-song">
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--heard">182,364</li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--like">10 k </li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--repost">3 k</li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--comment">96</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <iframe class="latter-compositions__player  latter-compositions__player--even" src="https://www.youtube.com/embed/W3oCipL7lpo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="latter-compositions__box">
+                        <div class="row">
+
+                            <div class="latter-compositions__item latter-compositions__item--odd">
+                                <div class="row">
+                                    <div class="latter-compositions__name">
+                                        <p class="latter-compositions__name-year">03.04.2015</p>
+                                        <p class="latter-compositions__name-text">chill nation</p>
+                                    </div>
+                                    <div class="latter-compositions__info">
+                                        <h3 class="latter-compositions__info-title">James Bay - Let It Go (Bearson Remix)</h3>
+                                        <p class="latter-compositions__info-text">A soulful singer/songwriter from a small English town with a penchant for crafting moving and evocative folk-pop confections in the vein of Ed Sheeran, Foy Vance, and Ben Howard, James Bay hails from the North </p>
+                                        <div class="latter-compositions__info-buttons">
+                                            <button class="latter-compositions__info-play">Visit the iTunes</button>
+                                            <ul class="latter-compositions__info-song">
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--heard">182,364</li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--like">10 k </li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--repost">3 k</li>
+                                                <li class="latter-compositions__info-song-item latter-compositions__info-song-item--comment">96</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <iframe class="latter-compositions__player latter-compositions__player--odd" src="https://www.youtube.com/embed/Bye8Zrab9KA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <div class="new-tracks" id="new-tracks">
+
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img  class="item__img" src="./images/carousel-item-ocean.jpg" alt="...">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <div class="row">
+                                                <h3 class="new-tracks__carousel-title">
+                                                    In 2008, lead singer Dan  Reynolds met
+                                                    <br/>
+                                                    drummer Andrew Tolmanat Brigham Young University where they were both students
+                                                </h3>
+                                            </div>
+                                            <div class="row">
+                                                <p class="new-tracks__carousel-info">Tolman recruited longtime high school friend Daniel Wayne "Wing" Sermon, who had graduated from Berklee College of Music. Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys. </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="new-tracks__carousel-text">Early years (2008–10)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img class="item__img" src="./images/carousel-item-ocean.jpg" alt="...">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <div class="row">
+                                            <h3 class="new-tracks__carousel-title">
+                                                In 2008, lead singer Dan  Reynolds met
+                                                <br/>
+                                                drummer Andrew Tolmanat Brigham Young University where they were both students
+                                            </h3>
+                                        </div>
+                                            <div class="row">
+                                                <p class="new-tracks__carousel-info">Tolman recruited longtime high school friend Daniel Wayne "Wing" Sermon, who had graduated from Berklee College of Music. Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys. </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="new-tracks__carousel-text">Early years (2008–10)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img class="item__img" src="./images/carousel-item-ocean.jpg" alt="...">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <div class="row">
+                                                <h3 class="new-tracks__carousel-title">
+                                                    In 2008, lead singer Dan  Reynolds met
+                                                    <br/>
+                                                    drummer Andrew Tolmanat Brigham Young University where they were both students
+                                                </h3>
+                                            </div>
+                                            <div class="row">
+                                                <p class="new-tracks__carousel-info">Tolman recruited longtime high school friend Daniel Wayne "Wing" Sermon, who had graduated from Berklee College of Music. Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys. </p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="new-tracks__carousel-text">Early years (2008–10)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+            <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="new-tracks__block">
+                                <div class="new-tracks__box">
+                                    <div class="new-tracks--box1">
+                                        <div class="row">
+                                            <div class="new-tracks__name">
+                                                <p class="new-tracks__name-year">03.04.2015</p>
+                                                <p class="new-tracks__name-text">chill nation</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="new-tracks__info">
+                                                <h3 class="new-tracks__info-title">James Bay - Let It Go (Bearson Remix)</h3>
+                                                <p class="new-tracks__info-text">A soulful singer/songwriter from a small English town with a penchant for crafting moving and evocative folk-pop confections in the vein of Ed Sheeran, Foy Vance, and Ben Howard, James Bay hails from the North Hertf shire market town of Hitchin. Bay honed his skills regionally, eventually landing high-exposure </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-tracks__box">
+                                    <div class="new-tracks--box2">
+                                        <div class="row">
+                                            <div class="new-tracks__name">
+                                                <p class="new-tracks__name-year">01.03.2015</p>
+                                                <p class="new-tracks__name-text">chill nation</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="new-tracks__info">
+                                                <h3 class="new-tracks__info-title">Smoke and Mirrors</h3>
+                                                <p class="new-tracks__info-text">Hard Rock Cafe teamed with the band, granting them the first ever full access to take control of Hard Rock Cafe's internal video system (more than 20,000 screens at all 151 locations</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-tracks__box">
+                                    <div class="new-tracks--box3">
+                                        <div class="row">
+                                            <div class="new-tracks__name">
+                                                <p class="new-tracks__name-year">04.04.2015</p>
+                                                <p class="new-tracks__name-text">chill nation</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="new-tracks__info">
+                                                <h3 class="new-tracks__info-title">It Comes Back to You</h3>
+                                                <p class="new-tracks__info-text">In 2015 a world tour, entitled the Smoke and Mirrors Tour is scheduled in promotion of the world-wide release of Smoke and Mirrors.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-tracks__box">
+                                    <div class="new-tracks--box4">
+                                        <div class="row">
+                                            <div class="new-tracks__name">
+                                                <p class="new-tracks__name-year">01.07.2015</p>
+                                                <p class="new-tracks__name-text">chill nation</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="new-tracks__info">
+                                                <h3 class="new-tracks__info-title">Let It Go (Bearson Remix)</h3>
+                                                <p class="new-tracks__info-text">A soulful singer/songwriter from a small English town with a penchant for crafting moving and evocative folk-pop confections in the vein of Ed Sheeran, Foy Vance, and Ben Howard, </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-tracks__box">
+                                    <div class="new-tracks--box5">
+                                        <div class="row">
+                                            <div class="new-tracks__name">
+                                                <p class="new-tracks__name-year">02.11.2015</p>
+                                                <p class="new-tracks__name-text">chill nation</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="new-tracks__info">
+                                                <h3 class="new-tracks__info-title">I Don't Mind</h3>
+                                                <p class="new-tracks__info-text">Hell and Silence is an EP by Las Vegas rock group Imagine Dragons, released in March 2010 in the United States. It was recorded at Battle Born Studios.[1] All songs were written by Imagine Dragons and self-produced. The EP was in part mixed by Grammy nominated engineer Mark Needham.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-tracks__box">
+                                    <div class="new-tracks--box6">
+                                        <div class="row">
+                                            <div class="new-tracks__name">
+                                                <p class="new-tracks__name-year">06.09.2015</p>
+                                                <p class="new-tracks__name-text">chill nation</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="new-tracks__info">
+                                                <h3 class="new-tracks__info-title">Smoke + Mirrors</h3>
+                                                <p class="new-tracks__info-text">A soulful singer/songwriter from a small English town with a penchant for crafting moving and evocative folk-pop confections in the vein of Ed Sheeran, Foy Vance, and Ben Howard, James Bay hails from the North Hertf shire market town of Hitchin.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+        <div class="upcoming-evens" id="upcoming-evens">
+            <div class="container">
+
+                <div class="row">
+                    <h2 class="upcoming-evens__title">
+                        <span class="upcoming-evens__title-text">upcoming evens</span>
+                    </h2>
+
+                </div>
+
+                <div class="row">
+                    <div class="upcoming-evens__info">
+                        <h3 class="upcoming-evens__info-title">Smoke + Mirrors Tour</h3>
+                        <p class="upcoming-evens__info-text">
+                            2-2-15 Hokukoryokuchi, Konohana Ward,
+                            </br>
+                            554-0042 Osaka Prefecture
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="upcoming-evens__hr" ><hr class="upcoming-evens__hr-style"/></div>
+                </div>
+                <div class="row">
+                    <p class="upcoming-evens__data-text">01.04.2015</p>
+
+                </div>
+                <div class="row">
+                    <div class="upcoming-evens__hr">
+                        <hr class="upcoming-evens__hr-style upcoming-evens__hr-style--center"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="upcoming-evens__info">
+                        <h3 class="upcoming-evens__info-title">Smoke + Mirrors Tour</h3>
+                        <p class="upcoming-evens__info-text">When the last-minute request is for a focus group, it’s usually a sign that the request originated in Marketing. When Web sites are being designed, the folks in Marketing often feel like they don’t have much clout. Even though they’re the ones who spend the most time trying to figure out who the site’s audience is and what they want, the designers and developers are the ones with most of the</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="upcoming-evens__hr" ><hr class="upcoming-evens__hr-style"/></div>
+                </div>
+                <div class="row">
+                    <p class="upcoming-evens__data-text">27.05.2015</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="history" id="history">
+            <div class="container">
+                <div class="row">
+                    <h2 class="history__title">
+                        <span class="history__title-text">history</span>
+                    </h2>
+                    <p class="history__content">In 2008, lead singer Dan Reynolds met drummer Andrew Tolman at Brigham Young University where they were both students.Tolman recruited longtime high school friend Daniel Wayne "Wing" Sermon, who had graduated from Berklee College of Music</p>
+                </div>
+            </div>
+            <div class="history__calendar">
+                <div class="slider center">
+                    <div class="calendar__item"> 
+                        <p class="calendar__item-text">feb 13</p> 
+                    </div>
+                    <div class="calendar__item"> 
+                        <p class="calendar__item-text">mar 16</p> 
+                    </div>                    
+                    <div class="calendar__item"> 
+                        <p class="calendar__item-text">apr 11</p> 
+                    </div>
+                    <div class="calendar__item">
+                         <p class="calendar__item-text">may 09</p> 
+                    </div>
+                    <div class="calendar__item"> 
+                        <p class="calendar__item-text">jun 06</p> 
+                    </div>
+                    <div class="calendar__item"> 
+                        <p class="calendar__item-text">jul 25</p> 
+                    </div>
+                    <div class="calendar__item"> 
+                        <p class="calendar__item-text">aug 27</p> 
+                    </div>                    
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <p class="history__calendar-text">Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys.</p>
+                    </div>              
+                </div>
+            </div>
+        </div>
+
+        <div class="contact" id="contact">
+            <div class="container">
+                <div class="row">
+                    <h2 class="contact__title">
+                        <span class="contact__title-text">contact</span>
+                    </h2>
+                </div>
+                <div class="row">
+                    <p class="contact__content">
+                        Canada Island, Division No. 23, Unorganized, MB, Canada
+                        </br>
+                        Tel. +1(778) 288 5180
+                    </p>
+                </div>
+
+                <div class="contact__form">
+                    <div class="row">
+                        <div class="contact__form-content">
+                            <div class="contact__form-container">
+                                <input type="text" placeholder="Name" class="contact__form-item"/>
+                                <input type="text" placeholder="E mail" class="contact__form-item"/>
+                                <input type="text" placeholder="Massage" class="contact__form-item"/>
+                            </div>
+                            <ul class="contact__socials">
+                                <li class="contact__socials-item">
+                                    <a href="https://uk-ua.facebook.com" target="_blank"  class="contact__socials-link contact__socials--facebook">Facebook</a>
+                                </li>
+                                <li class="contact__socials-item">
+                                    <a href="https://instagram.com" target="_blank" class="contact__socials-link contact__socials--instagram">Instagram</a>
+                                </li>
+                                <li class="contact__socials-item">
+                                    <a href="https://twitter.com" target="_blank" class="contact__socials-link contact__socials--twitter">Twitter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="contact__btn">Send</button>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </main><!-- .content -->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+//Title of blocks
+
+@mixin titleHeader ($bg,$lg,$push) {
+  margin-top: 160px;
+
+  &__title {
+    @include make-lg-column($lg);
+    @include make-lg-column-push($push);
+
+    text-align: center;
+    font: 50px/24px $secondaryFont;
+    text-transform: uppercase;
+    color: $titleFontColor;
+    letter-spacing: 6px;
+    line-height: 120px;
+  }
+
+  &__title-text  {
+    position: relative;
+    padding: 0 20px;
+    background: $bg;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::before {
+      content: '\0020';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      z-index: -1;
+    }
+  }
+}
+
+@mixin titleText ($lg, $push) {
+
+  &__content {
+    @include make-lg-column($lg);
+    @include make-lg-column-push($push);
+    text-align: center;
+    font-family: $primaryFont;
+    letter-spacing: 1.5px;
+    padding: 0 50px;
+    margin-bottom: 160px;
+  }
+}
+
+
+//Name of Blocks
+
+@mixin name($lg) {
+
+  &__name {
+    @include make-lg-column($lg);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: $titleDisHeight;
+
+    &-year {
+      color: $yearFontColor;
+
+      &::after {
+        content: '\0020';
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid $titleFontColor;
+        background: $titleFontColor;
+      }
+    }
+
+    &-text {
+      color: $titleFontColor;
+    }
+  }
+}
+
+//Information of Blocks
+@mixin info($lg) {
+  @include make-lg-column($lg);
+
+  &-title {
+    color: $titleFontColor;
+    font-size: $titleDisHeight;
+    line-height: 35px;
+    margin-bottom: 15px;
+  }
+
+  &-play {
+    height: 56px;
+    width: 196px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: Bold;
+    color: $titleFontColor;
+    background-size: cover;
+    border: 1px solid $borderButtonColor;
+    background: rgba($baseFontColor, 0);
+
+    &::after {
+      content: '\203A';
+      margin-left: 18px;
+      font-size: 24px;
+    }
+
+    &:hover {
+      border-color: #5b5c5a;
+      color: #5b5c5a;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin songIcons ($icon) {
+  position: relative;
+
+  &::before{
+    content: $icon;
+    position: absolute;
+    top: 75%;
+    right: 100%;
+    transform: translate(0, -50%);
+    margin: 0 10px;
+  }
+}
+
+//New tracks box
+
+@mixin newTracksBox ($bg,$number) {
+  padding: 35px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: $bg no-repeat;
+  -webkit-background-clip: padding-box;
+  overflow: hidden;
+
+  &::before {
+    content: $number;
+    position: absolute;
+    font-size: 82px;
+    color: rgba($titleFontColor, 0.17);
+    top: 93%;
+    left: 75%;
+  }
+}
+
+@mixin socials ($color, $content) {
+  &::before {
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 18px;
+    content: $content;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $color;
+  }
+}

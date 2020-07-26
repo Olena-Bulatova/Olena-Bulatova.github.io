@@ -1,0 +1,1390 @@
+//Navigation
+//-----------------------------------------------------------------------------
+.header__nav {
+  background: $headerBackground;  
+  width: 100%;
+  position: fixed;
+  z-index: 98;
+}
+
+.nav {
+  @include make-lg-column(12);
+  @include clearfix;
+  font-family: $secondaryFont;
+  font-size: 17px;
+  letter-spacing: 1.5px;
+  line-height: $headerHeight;
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $navFontColor;
+    border-bottom: 0;
+    padding-bottom: 0;
+    transition: all .2s;
+
+    &:hover {
+      text-decoration: none;
+      color: $titleFontColor;
+      border-bottom: 2px solid $titleFontColor;
+      padding-bottom: 4px;
+      transition: all .2s;
+    }
+  }
+}
+
+.header {
+
+  &__burger {
+    /* display: none;
+    position: relative;
+    background: transparent;
+    margin: 65px; */
+
+
+    &-state {
+      display: none;
+    }
+
+    &-btn {
+      margin: 65px;
+      border: 0;
+      display: none;
+      background: transparent;
+      position: relative;
+      border-radius: 3px;
+      text-align: center;
+      width: 40px;
+      height: 30px;
+      position: fixed;
+      right: 0;
+      transition: all .2s;
+      z-index: 99;
+      
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+    }
+
+    &-icon1{
+      position: absolute;
+      border: 3px solid #bebebe;
+      border-radius: 3px;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      transition: all .2s;
+    }
+
+    &-icon2 {
+      position: absolute;
+      border: 3px solid #bebebe;
+      border-radius: 3px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: all .2s;
+    }
+
+    &-icon3 {
+      position: absolute;
+      border: 3px solid #bebebe;
+      border-radius: 3px;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-100%);
+      transition: all .2s;
+    }
+  } 
+
+  #burger:checked {
+
+    & ~ .header__nav {
+      
+      font-size: larger;
+      font-weight: bold;
+      padding: 60px 20px 20px 20px;
+      height: 100%;
+      opacity: 1;
+      transition: 0.3s, all 0.3s;
+      background-color: rgba(0, 8, 12, 0.787);
+
+      & .container {
+        display: block;
+      }
+    }
+
+    & ~ .header__burger-btn {
+      .header__burger-icon1 {
+        opacity: 0;
+      }
+
+      .header__burger-icon2 {
+        top: 50%;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      .header__burger-icon3 {
+        top: 50%;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+
+//About
+//-----------------------------------------------------------------------------
+
+.about {
+  background: url(../images/about-bg.jpg) no-repeat center top;
+  width: 100%;
+  height: 1062px;
+  position: relative;
+
+  .logo {
+    position: absolute;
+    top: 33%;
+    left: 49%;
+    transform: translate(-49%, -33%);
+  }
+}
+
+//Discography
+//-----------------------------------------------------------------------------
+
+.discography {
+  &__bg {
+    background: url('../images/discography-bg.jpg') no-repeat center bottom;
+    min-height: 787px;
+    width: 100%;
+  }
+
+  //Title of bloks
+  @include titleHeader(url('../images/discography-title-bg.jpg'), 8, 2);
+  @include titleText(8, 2);
+  margin-top: 0;
+
+  //Info of blocks
+
+  &__box {
+    margin: 60px 0;
+  }
+
+  //Name of blocks
+  @include name(5);
+
+  &__info {
+
+    @include info(7);
+
+    &-text {
+      color: $contentFontColor;
+    }
+
+    &-play {
+
+      border: none;
+      text-transform: uppercase;
+
+      &::after {
+        display: none;
+      }
+
+      &--first {
+        background: url('../images/discography-play-2010.jpg') no-repeat center;
+        color: #fff;
+
+        &:hover {
+          color: #c6cdc7;
+        }
+      }
+
+      &--second {
+        background: url('../images/discography-play-2012.jpg') no-repeat center;
+      }
+
+      &--third {
+        background: url('../images/discography-play-2015.png') no-repeat center;
+      }
+    }
+  }
+}
+
+//Concert tours
+//-----------------------------------------------------------------------------
+
+.concert-tours {
+
+  //Title of Blocks
+  @include titleHeader($titleConcertColor, 10, 1);
+  @include titleText(10, 1);
+
+  //Name of blocks
+  @include name(5);
+
+  &__box {
+    margin-top: 25%;
+  }
+
+  &__bg {
+    background: url('../images/concert-tours-bg.jpg') no-repeat center bottom;
+    min-height: 957px;
+  }
+  &__name{
+    margin-bottom: 80px;
+  }
+
+  &__info {
+    @include info(7);
+  }
+}
+
+//Latter compositions
+//-----------------------------------------------------------------------------
+
+.latter-compositions {
+  @include titleHeader($titleFontColor, 8, 2);
+  @include titleText(8, 2);
+
+  @include name(9);
+
+
+  &__box {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    @include make-lg-column(6);
+    background: $compositionBgColor;
+    padding: 35px;
+    position: relative;
+    width: 602px;
+    min-height: 424px;
+
+    &--odd {
+      &::before {
+        content: '\0020';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 0 10px 12px;
+        border-color: transparent transparent transparent $compositionBgColor;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(0,-50%);
+        z-index: 3;
+      }
+    }
+
+    &--even {
+      @include make-lg-column-push(6);
+
+      &::after {
+        content: '\0020';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 12px 10px 0;
+        border-color: transparent $compositionBgColor transparent transparent;
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        transform: translate(0,-50%);
+        z-index: 3;
+      }
+
+    }
+  }
+
+  &__name{
+    margin-bottom: 50px;
+  }
+
+  &__info {
+    @include info(12);
+
+    &-song{
+      display: inline;
+      margin-left: 35px;
+
+
+      &-item {
+        display: inline;
+        font-size: 9px;
+
+        margin: 0 20px;
+
+        &--heard{
+          @include songIcons(url('../images/heard.png'));
+        }
+
+        &--like {
+          @include songIcons(url('../images/like.png'));
+        }
+
+        &--repost {
+          @include songIcons(url('../images/repost.png'));
+        }
+
+        &--comment {
+          @include songIcons(url('../images/comment.png'));
+        }
+      }
+
+      &-item:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__player {
+    @include make-lg-column(6);
+
+    position: relative;
+    width: 602px;
+    height: 424px;
+    padding: 0;
+
+    &--even {
+      @include make-lg-column-pull(6);
+    }
+  }
+}
+
+//New Tracks
+//-----------------------------------------------------------------------------
+
+
+//Carusel of new tracks
+.carousel {
+  margin: 160px 0;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  max-width: none;
+}
+
+.carousel-caption {
+  height: 100%;
+}
+.new-tracks {
+  &__carousel-title {
+    @include make-lg-column(10);
+    @include make-lg-column-push(1);
+    text-transform: uppercase;
+    font-size: 18px;
+
+    font-family: $secondaryFont;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+    margin-top: 160px;
+    position: relative;
+
+    &::before{
+      content: url('../images/carousel-music-logo.png');
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%,0);
+      margin-bottom: 45px;
+    }
+  }
+
+  &__carousel-info,
+  &__carousel-text {
+    @include make-lg-column(6);
+    @include make-lg-column-push(3);
+    padding: 0 40px;
+    margin-bottom: 60px;
+    font-size: 14px;
+    font-family: $primaryFont;
+    color: $baseFontColor;
+  }
+}
+
+.glyphicon-chevron-left{
+
+  &::before {
+    content: '\0020';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 86px 0 86px 85px;
+    border-color: transparent transparent transparent #ffffff;
+    display: block;
+    left: 8px;
+    transform: translate(0,-40%);
+  }
+
+  &::after {
+    display: block;
+    content: "\2039";
+    font-size: 40px;
+    position: relative;
+    top: 50%;
+    left: 70%;
+    z-index: 5;
+    transform: translate(0,-50%);
+  }
+}
+
+.glyphicon-chevron-right{
+
+  &::before {
+    content: '\0020';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 86px 85px 86px 0;
+    border-color: transparent #ffffff transparent transparent;
+    display: block;
+    right: 0;
+    transform: translate(0,-40%);
+  }
+
+  &::after {
+    display: block;
+    content: "\203A";
+    font-size: 40px;
+    position: relative;
+    top: 50%;
+    right: 70%;
+    z-index: 5;
+    transform: translate(0,-50%);
+  }
+}
+
+
+.carousel-control .icon-next, .carousel-control .glyphicon-chevron-right {
+  margin-right: 0;
+}
+.carousel-control {
+  opacity: 1;
+  width: 0;
+  color: rgba(0, 0, 0, 1);
+}
+.carousel-control:hover,
+.carousel-control:focus,
+.carousel-control:active {
+  opacity: 1;
+  color: rgba(71, 71, 71, 1);
+}
+.carousel-control.left,
+.carousel-control.right {
+
+  background: rgba(0, 0, 0, 0);
+}
+.carousel-control.left:hover,
+.carousel-control.left:focus,
+.carousel-control.left:active {
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100%);
+}
+.carousel-control.right:hover,
+.carousel-control.right:focus,
+.carousel-control.right:active {
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100%);
+}
+
+//Blocks of New track
+
+
+.new-tracks {
+  @include name(12);
+
+  &__info{
+    @include info(12);
+
+    &-title {
+      margin: 35px 0;
+    }
+    &-text{
+    position: absolute;
+    top: 132%;
+    }
+  }
+
+  &__box:first-child{
+    .new-tracks__info-text{
+      top: 100%;
+    }
+  }
+
+  &__box {
+    @include make-lg-column(4);
+    height: 424px;
+    margin: 15px 0;
+  }
+
+  &__name{
+    margin-top: 0;
+
+    &-text {
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+
+
+  &--box1{
+    @include newTracksBox(url('../images/new-track-box1.png') center center, '01');
+  }
+
+  &--box2{
+    @include newTracksBox(url('../images/new-track-box2.png') center center, '02');
+  }
+
+  &--box3{
+    @include newTracksBox(url('../images/new-track-box3.png') center center, '03');
+  }
+
+  &--box4{
+    @include newTracksBox(url('../images/new-track-box4.png') center center, '04');
+  }
+
+  &--box5{
+    @include newTracksBox(url('../images/new-track-box5.png') center center, '05');
+  }
+
+  &--box6{
+    @include newTracksBox(url('../images/new-track-box6.png') left center, '06');
+  }
+}
+
+//Upcoming evens
+//-----------------------------------------------------------------------------
+
+.upcoming-evens {
+  background: url('../images/upcoming-evens-bg.jpg') no-repeat center bottom;
+  min-height: 1202px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+
+  @include titleHeader(#42717e,5,6);
+
+  &__title {
+    margin-top: 160px;
+    margin-bottom: 70px;
+
+  }
+
+  &__info {
+    @include info(5);
+    @include  make-lg-column-push(6);
+
+    &-title {
+        &::after {
+        content: '\0020';
+        display: block;
+        width: 30%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid $titleFontColor;
+        background: $titleFontColor;
+      }
+    }
+  }
+
+  &__data-text {
+    @include make-lg-column(5);
+    @include make-lg-column-push(6);
+  }
+
+  &__hr {
+    @include make-lg-column(1);
+    @include make-lg-column-push(6);
+
+    &-style {
+      background-color: black;
+      width: 1px;
+      height: 50px;
+
+      &--center {
+        height: 166px;
+      }
+    }
+  }
+
+}
+
+.history {
+  background: url('../images/history-bg.jpg') no-repeat center bottom;
+  min-height: 1103px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+
+  @include titleHeader(#5b5c5a,8,2);
+  @include titleText(8, 2);
+
+  &__calendar {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+
+     & .calendar__item {
+       display: block;
+        text-align: center;
+        font: 24px/12px $secondaryFont;
+        text-transform: uppercase;
+        color: #bebebe;    
+        letter-spacing: 4px;
+        line-height: 32px;
+        position: relative;
+
+        &::before {
+          content: " ";
+          width: 35%;
+          border: 1px solid #bebebe;
+          position: absolute;
+          top: 50%;
+          left: -20%; 
+        }
+    
+        &::after {
+          content: " ";
+          width: 35%;
+          border: 1px solid #bebebe;
+          position: absolute;
+          top: 50%;   
+          right: -20%;
+        }
+    }
+
+    
+
+    & .slick-center {
+      & .calendar__item {
+        color: $titleFontColor;
+        &-text {
+          position: relative;
+          &::before {
+            content: " ";
+            width: 5px;
+            height: 5px;
+            background-color: $titleFontColor;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 2.5px);
+            left: 25%;
+          }
+      
+          &::after {
+            content: " ";
+            width: 5px;
+            height: 5px;
+            background-color: $titleFontColor;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 2.5px);
+            right: 25%;
+          }
+        }
+      }    
+      
+    }
+    
+    & .slick-slide {
+      &:focus {
+        outline: none;
+      }
+    }
+    
+
+    &-text {
+      @include make-lg-column(4);
+      @include make-lg-column-push(4);
+      margin-top: 50px;
+      padding: 0 95px;
+      text-align: center;
+    }
+  }
+}
+
+.contact {
+  background: url('../images/contact-bg.jpg') no-repeat center bottom;
+  min-height: 860px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+
+  @include titleHeader(#454545,4,6);
+  @include titleText(4, 6);
+
+  &__title{
+    text-align: left;
+    padding: 0;
+  }
+  &__content {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 90px;
+  }
+
+  &__form {
+    &-content {
+      display: flex;
+    }
+
+
+    &-container {
+      @include make-lg-column(4);
+      @include make-lg-column-push(6);
+      padding: 0;
+    }
+
+    &-item {
+      @include make-lg-column(12);
+
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #000;
+      padding: $paddingButtonText 0;
+      margin-bottom: $marginButtonText;
+      background-color: transparent;
+
+      &:focus{
+        outline: 0;
+      }
+    }
+  }
+
+  &__socials {
+    @include make-lg-column(1);
+    @include make-lg-column-push(7);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid $titleFontColor;
+    margin: $sizeButtonText 0;
+
+    &-item{
+      margin: 0 auto;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-size: 0px;
+      display: block;
+      color: #000;
+    }
+    &--facebook {
+      @include socials(#305fb3, '\f39e');
+    }
+
+    &--instagram {
+      @include socials($gradientInstagram , '\f16d');
+    }
+
+    &--twitter {
+      @include socials(#41abe1, '\f099');
+    }
+  }
+
+  &__btn {
+    @include make-lg-column(4);
+    @include make-lg-column-push(6);
+
+    text-align: left;
+    padding: 0;
+    font-size: $sizeButtonText;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: $titleFontColor;
+
+    &:hover {
+      color: #454545;
+      cursor: pointer;
+    }
+    &:focus{
+      outline: 0;
+    }
+
+  }
+}
+
+@media all  and (min-width:751px) and (max-width:1200px){
+  .header {
+
+    &__nav {
+      height: 0;
+      opacity: 0;   
+      transition: 0.2s, all 0.3s;
+
+      & .container {
+        display: none;
+      }
+
+      & .nav {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
+        height: 100%;
+
+        &__link {
+          color: #ffffff;
+        }
+
+        &__link:hover {
+          color: #000;
+        }
+      }
+      
+    }
+
+    &__burger {
+      &-btn {
+        display: block;
+      }
+    }
+  }
+
+.discography{
+
+  &__title {
+    @include make-sm-column(12);
+  }
+  &__content {
+    @include make-sm-column(12);
+    padding: 0;
+  }
+
+  &__name {
+    @include make-sm-column(10);
+    @include make-sm-column-push(1);
+  }
+
+  &__info{
+    @include make-sm-column(10);
+    @include make-sm-column-push(1);
+
+      &-text
+      {
+        text-align: justify;
+      }
+      &-play {
+        width: 100%;
+      }
+
+  }
+}
+  .concert-tours{
+
+    &__title {
+      @include make-sm-column(12);
+    }
+    &__content {
+      @include make-sm-column(12);
+      padding: 0;
+      margin-bottom: 0;
+    }
+    &__name {
+      @include make-sm-column(6);
+      @include make-sm-column-push(1);
+    }
+    &__info {
+      @include make-sm-column(9);
+      @include make-sm-column-push(1);
+    }
+  }
+
+  .latter-compositions{
+    &__title {
+      @include make-sm-column(12);
+    }
+    &__content {
+      @include make-sm-column(12);
+      padding: 0;
+      margin-bottom: 70px;
+    }
+
+    &__item {
+      @include make-sm-column(10);
+      @include make-sm-column-push(1);
+
+      &::after {
+        content: '\0020';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 18px 15px 0 15px;
+        border-color: $compositionBgColor transparent transparent transparent;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,0);
+        z-index: 3;
+      }
+
+
+      &--odd {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &__name{
+      @include make-sm-column(12);
+      padding: 0 50px;
+    }
+
+    &__info {
+      @include make-sm-column(12);
+      padding: 50px;
+
+    }
+
+    &__player {
+      @include make-sm-column(10);
+      @include make-sm-column-push(1);
+      width: 602px;
+      height: 424px;
+      padding: 0;
+   }
+  }
+
+  .carousel {
+    margin: 0;
+    margin-bottom: 100px;
+  }
+
+  .glyphicon-chevron-right,
+  .glyphicon-chevron-left {
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+  }
+
+  .new-tracks {
+    &__carousel-title {
+      @include make-sm-column(12);
+    }
+
+    &__carousel-info,
+    &__carousel-text {
+      @include make-sm-column(8);
+      @include make-sm-column-push(2);
+
+    }
+
+    &__info{
+      padding: 0;
+      &-title{
+        @include make-sm-column(12);
+      }
+      &-text{
+        @include make-sm-column(12);
+      }
+    }
+
+    &__name{
+      @include make-sm-column(12);
+      margin-top: 0;
+    }
+
+    &__box {
+      @include make-sm-column(6);
+      min-height: 424px;
+      margin: 15px 0;
+    }
+  }
+
+  .upcoming-evens {
+
+    &__title {
+      @include make-sm-column(12);
+      @include make-sm-column-push(4);
+      text-align: left;
+    }
+
+    &__info {
+      @include make-sm-column(8);
+      @include make-sm-column-push(4);
+    }
+
+    &__data-text {
+      @include make-sm-column(8);
+      @include make-sm-column-push(4);
+    }
+
+    &__hr {
+      @include make-sm-column(1);
+      @include make-sm-column-push(4);
+
+      &-style {
+        background-color: black;
+        width: 1px;
+        height: 50px;
+
+        &--center {
+          height: 166px;
+        }
+      }
+    }
+  }
+
+  .history{
+    &__title {
+      @include make-sm-column(12);
+    }
+    &__content {
+      @include make-sm-column(12);
+      padding: 0;
+    }
+    &__calendar {
+      &-text {
+        @include make-sm-column(4);
+        @include make-sm-column-push(4);
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .contact {
+
+    &__title{
+      @include make-sm-column(6);
+      @include make-sm-column-push(4);
+    }
+    &__content {
+      @include make-sm-column(6);
+      @include make-sm-column-push(4);
+      padding: 0;
+      margin-bottom: 90px;
+    }
+
+    &__form {
+
+      &-container {
+        @include make-sm-column(6);
+        @include make-sm-column-push(4);
+        padding: 0;
+      }
+
+      &-item {
+        @include make-sm-column(12);
+        padding: 0;
+      }
+    }
+
+    &__socials {
+      @include make-sm-column(1);
+      @include make-sm-column-push(5);
+    }
+
+    &__btn {
+      @include make-sm-column(6);
+      @include make-sm-column-push(4);
+      text-align: left;
+      padding: 0;
+    }
+  }
+}
+
+@media all  and (max-width:750px){
+
+  .header {
+
+    &__nav {
+      height: 0;
+      opacity: 0;   
+      transition: 0.2s, all 0.3s;
+
+      & .container {
+        display: none;
+      }
+
+      & .nav {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
+        height: 100%;
+
+        &__link {
+          color: #ffffff;
+        }
+
+        &__link:hover {
+          color: #000;
+        }
+      }
+      
+    }
+
+    &__burger {
+      &-btn {
+        display: block;
+      }
+    }
+  }
+
+
+  .discography{
+
+    &__title {
+      @include make-xs-column(12);
+      font-size: 30px;
+    }
+    &__content {
+      @include make-xs-column(12);
+    }
+
+    &__name {
+      @include make-xs-column(10);
+      @include make-xs-column-push(1);
+    }
+
+    &__info{
+      @include make-xs-column(10);
+      @include make-xs-column-push(1);
+
+      &-text
+      {
+        text-align: justify;
+      }
+      &-play {
+        width: 100%;
+      }
+
+    }
+  }
+  .concert-tours{
+
+    &__title {
+      @include make-xs-column(12);
+      font-size: 30px;
+    }
+    &__content {
+      @include make-xs-column(12);
+      margin-bottom: 0;
+    }
+    &__name {
+      @include make-xs-column(6);
+      @include make-xs-column-push(1);
+    }
+    &__info {
+      @include make-xs-column(9);
+      @include make-xs-column-push(1);
+    }
+  }
+
+  .latter-compositions{
+    &__title {
+      @include make-xs-column(12);
+      font-size: 30px;
+    }
+    &__content {
+      @include make-xs-column(12);
+      margin-bottom: 70px;
+    }
+
+    &__item {
+      @include make-xs-column(10);
+      @include make-xs-column-push(1);
+
+      &::after {
+        content: '\0020';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 18px 15px 0 15px;
+        border-color: $compositionBgColor transparent transparent transparent;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,0);
+        z-index: 3;
+      }
+
+
+      &--odd {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &__name{
+      @include make-xs-column(12);
+      padding: 0 50px;
+    }
+
+    &__info {
+      @include make-xs-column(12);
+      padding: 50px;
+      
+      &-song {
+        padding: 20px;
+        margin: 0;
+        display: block;
+      }
+    }
+
+    &__player {
+      @include make-xs-column(10);
+      @include make-xs-column-push(1);
+      min-height: 424px;
+      padding: 0;
+    }
+  }
+
+  .carousel {
+    margin: 0;
+    margin-bottom: 100px;
+  }
+
+  .glyphicon-chevron-right,
+  .glyphicon-chevron-left {
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+  }
+
+  .new-tracks {
+
+    &__carousel-title {
+      @include make-xs-column(12);
+      font-size: 20px;
+    }
+
+    &__carousel-info,
+    &__carousel-text {
+      @include make-xs-column(8);
+      @include make-xs-column-push(2);
+
+    }
+
+    &__info{
+      padding: 0;
+      &-title{
+        @include make-xs-column(12);
+      }
+      &-text{
+        @include make-xs-column(12);
+      }
+    }
+
+    &__name{
+      @include make-xs-column(12);
+      margin-top: 0;
+    }
+
+    &__box {
+      @include make-xs-column(8);
+      @include make-xs-column-push(2);
+
+      min-height: 424px;
+      margin: 15px 0;
+    }
+  }
+
+  .upcoming-evens {
+    margin-top: 0;
+
+    &__title {
+      @include make-xs-column(12);
+      @include make-xs-column-push(2);
+      font-size: 30px;
+      text-align: left;
+    }
+
+    &__info {
+      @include make-xs-column(8);
+      @include make-xs-column-push(2);
+    }
+
+    &__data-text {
+      @include make-xs-column(8);
+      @include make-xs-column-push(2);
+    }
+
+    &__hr {
+      @include make-xs-column(1);
+      @include make-xs-column-push(2);
+    }
+  }
+
+  .history{
+    &__title {
+      @include make-xs-column(12);
+      font-size: 30px;
+    }
+
+    &__content {
+      @include make-xs-column(12);
+    }
+
+    &__calendar {
+      &-text {
+        @include make-xs-column(4);
+        @include make-xs-column-push(4);
+        padding: 0 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .contact {
+
+    &__title{
+      @include make-xs-column(7);
+      @include make-xs-column-push(2);
+      font-size: 30px;
+    }
+    &__content {
+      @include make-xs-column(7);
+      @include make-xs-column-push(2);
+      padding: 0;
+      margin-bottom: 90px;
+    }
+
+    &__form {
+
+      &-container {
+        @include make-xs-column(7);
+        @include make-xs-column-push(2);
+        padding: 0;
+      }
+
+      &-item {
+        @include make-xs-column(12);
+        padding: 0;
+      }
+    }
+
+    &__socials {
+      @include make-xs-column(1);
+      @include make-xs-column-push(3);
+    }
+
+    &__btn {
+      @include make-xs-column(7);
+      @include make-xs-column-push(2);
+      text-align: left;
+      padding: 0;
+    }
+  }
+}

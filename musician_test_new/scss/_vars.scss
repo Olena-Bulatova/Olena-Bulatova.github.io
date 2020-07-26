@@ -1,0 +1,54 @@
+//Base Color
+$rollingStone: #798285;
+$black: #000;
+
+//Nav color
+$scorpion: #606060;
+$swamp: #00080c;
+
+//Blocks color
+$silverChalice: #acacac;
+//$codGray: #0F0F0F;
+$gray: #808080;
+$blackHaze: #f5f6f6;
+
+//Typography
+$primaryFont: OpenSans, Arial, Helvetica, sans-serif;
+$secondaryFont: Dosis, Arial, Helvetica, sans-serif;
+
+//LineHeight
+$headerHeight: 62px;
+$titleDisHeight: 23px;
+
+//Background title of concert tours
+$hippieBlue: #62a2ad;
+$gulfStream: #8dbab3;
+
+//Play button
+$silverSand: #b5b7b7;
+$edward: #abacac;
+
+
+$sizeButtonText: 20px;
+$paddingButtonText: 10px;
+$marginButtonText: 44px;
+
+$gradientInstagram:
+  /////// Use radial gradients to get the rounded
+  /////// gradient effect in each corner
+
+  // left bottom
+radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+  // left top
+radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+  //  right top
+radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+  // right bottom
+radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+
+  /////// create a base coat to smooth
+  /////// corner gradients
+linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
