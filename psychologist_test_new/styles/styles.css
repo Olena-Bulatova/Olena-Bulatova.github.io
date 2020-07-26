@@ -991,21 +991,6 @@ nav {
     width: 400px;
   }
 
-  .recording__block {
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-    padding: 50px;
-  }
-  .recording__block-title {
-    font-size: 22px;
-  }
-  .recording__block-text {
-    font-size: 20px;
-  }
-  .recording__block-button {
-    font-size: 22px;
-  }
-
   .footer {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-auto-rows: auto;
@@ -1038,6 +1023,21 @@ nav {
   }
   .article__photo {
     background-size: 390px;
+  }
+
+  .recording__block {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 50px;
+  }
+  .recording__block-title {
+    font-size: 22px;
+  }
+  .recording__block-text {
+    font-size: 20px;
+  }
+  .recording__block-button {
+    font-size: 22px;
   }
 
   .principles .firstTree {
@@ -1090,6 +1090,23 @@ nav {
 
   .education .carousel img {
     width: 280px;
+  }
+
+  .recording__block {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 30px;
+  }
+  .recording__block-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .recording__block-text {
+    font-size: 14px;
+  }
+  .recording__block-button {
+    padding: 15px;
+    font-size: 18px;
   }
 
   .principles .firstTree {
