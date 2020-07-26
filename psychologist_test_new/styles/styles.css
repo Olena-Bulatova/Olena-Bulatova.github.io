@@ -965,6 +965,10 @@ nav {
     bottom: -28px;
     border-width: 0 50px 28px 0;
   }
+  .questions .carousel-item span {
+    margin: 0;
+    margin-right: 50px;
+  }
   .questions .carousel-item span::before {
     content: "";
     width: 50px;

@@ -298,7 +298,7 @@ class AppView {
                     </li>
                     </ul>
 			    </div>
-                <img class="footer__block footer__block--logo" src="../images/logo-desing.png" alt="logo"/>
+                <img class="footer__block footer__block--logo" src="./images/logo-desing.png" alt="logo"/>
             </footer>`;
     }
 }

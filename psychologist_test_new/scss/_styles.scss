@@ -728,6 +728,8 @@
         }
   
         & span {
+          margin: 0;
+          margin-right: 50px;
         
           &::before {
             content: "";
