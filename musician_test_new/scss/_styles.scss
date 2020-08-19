@@ -1315,6 +1315,7 @@
     &__title {
       @include make-xs-column(10);
       @include make-xs-column-push(2);
+
       font-size: 30px;
       text-align: left;
       
