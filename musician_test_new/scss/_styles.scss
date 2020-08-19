@@ -696,6 +696,14 @@
       }    
       
     }
+
+    .slick-next {
+      right: 0;
+    }
+
+    .slick-next::before {
+      display: none;
+    }
     
     & .slick-slide {
       &:focus {
@@ -1305,10 +1313,11 @@
     margin-top: 0;
 
     &__title {
-      @include make-xs-column(12);
+      @include make-xs-column(10);
       @include make-xs-column-push(2);
       font-size: 30px;
       text-align: left;
+      
     }
 
     &__info {

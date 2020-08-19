@@ -3025,6 +3025,12 @@ body {
   top: calc(50% - 2.5px);
   right: 25%;
 }
+.history__calendar .slick-next {
+  right: 0;
+}
+.history__calendar .slick-next::before {
+  display: none;
+}
 .history__calendar .slick-slide:focus {
   outline: none;
 }
@@ -4168,7 +4174,7 @@ body {
   .upcoming-evens__title {
     position: relative;
     float: left;
-    width: 100%;
+    width: 83.3333333333%;
     min-height: 1px;
     padding-left: 12px;
     padding-right: 12px;
