@@ -1,1 +1,0 @@
-# simplashop_test
